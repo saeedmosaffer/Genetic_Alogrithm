@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genetic Algorithm - Password Guesser</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>Genetic Algorithm - Password Guesser</header>
+
+<main>
+  <!-- Configuration Panel -->
+  <div id="config-panel">
+    <label for="population-size">Population Size:</label>
+    <input type="number" id="population-size" value="200" min="10" max="1000">
+    <label for="mutation-rate">Mutation Rate:</label>
+    <input type="number" id="mutation-rate" step="0.01" value="0.01" min="0" max="1">
+    <label for="crossover-rate">Crossover Rate:</label>
+    <input type="number" id="crossover-rate" step="0.01" value="0.7" min="0" max="1">
+    <button id="apply-config">Apply Configuration</button>
+  </div>
+
+  <!-- Algorithm Status -->
+  <h2>Target Passcode: <span id="target" style="color: #4CAF50; font-weight: bold;"></span></h2>
+  <div id="loader" style="display: none;">Running the Genetic Algorithm...</div>
+  <div class="stats">
+    <div class="stat">Best Guess: <span id="best-guess" style="font-weight: bold;"></span></div>
+    <div class="stat">Fitness: <span id="fitness" style="font-weight: bold; color: #4CAF50;"></span></div>
+    <div class="stat">Generations: <span id="generations" style="font-weight: bold; color: #0073e6;"></span></div>
+    <div class="stat">Time: <span id="time" style="font-weight: bold; color: #e67e22;"></span></div>
+  </div>
+
+  <!-- Convergence Chart -->
+  <canvas id="convergence-chart" width="700" height="400"></canvas>
+
+  <!-- Experiment Results -->
+  <table id="experiment-table">
+    <thead>
+    <tr>
+      <th>Population Size</th>
+      <th>Mutation Rate</th>
+      <th>Generations</th>
+      <th>Runtime</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- Action Buttons -->
+  <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+    <button id="start-btn">Start</button>
+    <button id="restart-btn">Restart</button>
+    <button id="save-generations-btn" class="experiment-btn">Save Generations</button>
+    <button id="save-chart-btn" class="experiment-btn">Save Chart</button>
+  </div>
+</main>
+
+<footer>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
